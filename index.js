@@ -1,4 +1,6 @@
 module.exports = function mkReducedEventuate (eventuate, reduce, init) {
+    var lastValue = init
+
     // create a new eventuate with the parent's setting
     var reducedEventuate = eventuate.factory({ monitorConsumers: eventuate.hasConsumer !== undefined })
 
@@ -10,20 +12,26 @@ module.exports = function mkReducedEventuate (eventuate, reduce, init) {
         eventuate.removeConsumer(reduceConsumer)
     }
 
+    reducedEventuate.reset = function reducedEventuateReset (resetValue) {
+        reducedEventuate.lastValue = lastValue = resetValue
+    }
+
     // create new eventuate upstream consumer
     eventuate(reduceConsumer)
 
     return reducedEventuate
-    var lastValue = init;
+
     function reduceConsumer (data) {
 
-        if ( typeof lastValue === 'undefined') {
-            lastValue = data
-        } else {
-            lastValue = reduce( lastValue, data, init )
+        if (typeof lastValue === 'undefined') {
+            reducedEventuate.lastValue = lastValue = data
+        }
+        else {
+            reducedEventuate.lastValue = lastValue = reduce(lastValue, data)
+
+            // act on original producers payload, and emit(produce) event
+            reducedEventuate.produce(lastValue)
         }
 
-        // act on original producers payload, and emit(produce) event
-        reducedEventuate.produce(lastValue)
     }
 }

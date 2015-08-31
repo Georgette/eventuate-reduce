@@ -7,8 +7,7 @@
     "type": "git",
     "url": "git://github.com/Georgette/eventuate-reduce.git"
   },
-  "keywords": [
-  ],
+  "keywords": [],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Georgette/eventuate-reduce/issues"
@@ -19,16 +18,16 @@
     "email": "gege@pincin.com",
     "url": "https://github.com/Georgette"
   },
-  "contributors": [
-  ],
+  "contributors": [],
   "devDependencies": {
     "@jasonpincin/standard": "~5.0.0-7",
+    "eventuate": "^4.0.0",
     "istanbul": "~0.3.17",
     "opn": "~1.0.2",
+    "phantomjs": "~1.9.18",
     "tap-dot": "~1.0.0",
     "tap-spec": "~4.1.0",
     "tape": "~4.2.0",
-    "phantomjs": "~1.9.18",
     "zuul": "~3.3.0"
   },
   "scripts": {
