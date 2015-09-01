@@ -50,7 +50,7 @@ var upstreamEventuate = eventuate()
 
 ### var reducedEventuate = reduce(upstreamEventuate, reduceFunc, [initialValue])
 
-Returns a new eventuate which produces reduced event payloads from eventuate `upstreamEventuate` using `reduceFunc` .  `reduceFunc` should have the signature `function (lastValue, data) { }`, and return the reduced payload. This function receives all event data from `upstreamEventuate`. 
+Returns a new eventuate which produces reduced event payloads from eventuate `upstreamEventuate` using `reduceFunc` .  `reduceFunc` should have the signature `function (lastValue, data) { }`, and return the reduced payload. This function receives the lastValue from the last `produce` and  all event data from `upstreamEventuate`. 
 
 If `upstreamEventuate` is an unmonitored eventuate, `filteredEventuate` will return an unmonitored eventuate.
 
