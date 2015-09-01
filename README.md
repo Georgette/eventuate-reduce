@@ -3,9 +3,8 @@
 [![NPM version](https://badge.fury.io/js/eventuate-reduce.png)](http://badge.fury.io/js/eventuate-reduce)
 [![Build Status](https://travis-ci.org/Georgette/eventuate-reduce.svg?branch=master)](https://travis-ci.org/Georgette/eventuate-reduce)
 [![Coverage Status](https://coveralls.io/repos/Georgette/eventuate-reduce/badge.png?branch=master)](https://coveralls.io/r/Georgette/eventuate-reduce?branch=master)
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/Georgette_github.svg)](https://saucelabs.com/u/Georgette_github)
 
-create a reduced eventuate
+Create a reduced eventuate
 
 ## example
 
